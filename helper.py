@@ -1,13 +1,10 @@
 import os
 import json
-import uuid
-import time
-
-from requests.api import get
 from kraken import *
 from datetime import date, datetime, timedelta
 import logging
 import pandas as pd
+import uuid
 
 
 def is_coin_above_50_day_sma(coin, interval=1440):
@@ -63,6 +60,11 @@ def get_previouse_price(coin):
 
 
 def do_we_own_the_coin(coin):
+
+    if not doesFileExists('./portfolio.json'):
+        with open('portfolio.json', 'w') as file:
+            json.dump({}, file)
+
     with open('portfolio.json', 'r') as file:
         portfolio = json.load(file)
     if coin in portfolio:
@@ -97,7 +99,9 @@ def get_portfolio_data(coin):
     with open('portfolio.json', 'r') as file:
         portfolio_data = json.load(file)
     
-    return portfolio_data[coin]
+    # return portfolio_data[coin]
+    return portfolio_data
+    
 
 
 def add_coin_to_portfolio(coin, portfolio_data):
@@ -217,6 +221,7 @@ def update_order_log(order):
         except:
             print("Something happened while tryin to update the trading log :(")
             logging.error("Something happened while tryin to update the trading log :( - id: {log_id}")
+            json.dump(order_log, file)
 
 
 def update_previous_price(coin, current_price):
