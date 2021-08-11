@@ -3,7 +3,7 @@ import json
 from kraken import *
 from datetime import date, datetime, timedelta
 import logging
-import pandas as pd
+# import pandas as pd
 import uuid
 
 
