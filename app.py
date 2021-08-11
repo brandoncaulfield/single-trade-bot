@@ -200,7 +200,7 @@ def run():
                     print(f'TP hit at price: {current_price}')
                     logging.info(f'TP hit at price: {current_price}')
 
-                    order_resp_sl = place_order(coin, 'sell', portfolio_data['vol'])
+                    order_resp_sl = place_order(coin, 'sell', portfolio_data[coin]['vol'])
 
                     if len(order_resp_sl["error"]) == 0:
                         # Wait for order to propogate
@@ -246,7 +246,7 @@ def run():
                         print(f'Floor price hit at price: {portfolio_data[coin]["bought_at"]}')
                         logging.info(f'Floor price hit at price: {portfolio_data[coin]["bought_at"]}')
 
-                        order_resp_floor = place_order(coin, 'sell', portfolio_data['vol'])
+                        order_resp_floor = place_order(coin, 'sell', portfolio_data[coin]['vol'])
 
                         if len(order_resp_floor["error"]) == 0:
                             # Wait for order to propogate
@@ -291,7 +291,7 @@ def run():
                     print(f'SL hit at price: {current_price}')
                     logging.info(f'SL hit at price: {current_price}')
 
-                    order_resp_sl = place_order(coin, 'sell', portfolio_data['vol'])
+                    order_resp_sl = place_order(coin, 'sell', portfolio_data[coin]['vol'])
 
                     if len(order_resp_sl["error"]) == 0:
                         # Wait for order to propogate
@@ -300,7 +300,6 @@ def run():
                         order_info = get_order_info(order_resp_sl["result"]["txid"][0])
 
                         trade_data = get_trade_details(order_info['result'][order_resp_sl["result"]["txid"][0]]["trades"][0])
-
                         trade_data['portfolio_data'] = portfolio_data
 
                         trade_data['order_reason'] = 'Take Profit'
