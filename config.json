@@ -1,0 +1,12 @@
+{
+  "test_mode": false,
+  "time_difference": 3,
+  "coin": "XETHZGBP",
+  "price_to_buy": 2000,
+  "take_profit": 6,
+  "stop_loss": 3,
+  "value_to_spend": 2000,
+  "trading_currency": "ZGBP",
+  "safe_percentage": 99,
+  "trailing_sl_and_tp": false
+}

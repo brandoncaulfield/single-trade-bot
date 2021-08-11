@@ -117,7 +117,7 @@ def run(order_type):
     # else:
     #     print(len(resp["error"]))
     #     print(resp["error"])
-    resp = add_kraken_order("XETHZUSD", "sell", 0.02786793)
+    resp = add_kraken_order("XETHZGBP", "sell", 0.82615207)
     if resp:
         print(resp)
     # resp = get_account_balance()

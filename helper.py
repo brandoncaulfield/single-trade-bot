@@ -164,7 +164,7 @@ def determine_volume_to_buy(current_price, value_to_spend, currency, safe_percen
             volume_to_buy = float(account_balance['result'][currency]) / float(current_price)
 
             if safe_percentage:
-                reduced_volume_to_buy = (float(volume_to_buy) / value_to_spend) * float(safe_percentage)
+                reduced_volume_to_buy = (float(volume_to_buy) / 100) * float(safe_percentage)
                 return reduced_volume_to_buy
             else:
                 return volume_to_buy
