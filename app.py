@@ -320,6 +320,8 @@ def run():
             # Watch
             # Repeat ->
 
+            # IF we hit a stop loss that price becomes the new auto buying price
+
             # Update trailing Stop Loss
             # Also...
             # Set a "FLOOR" value of what you bought it for for long term strategy
