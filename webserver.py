@@ -17,7 +17,7 @@ def stream():
                 sleep(5)
     return app.response_class(generate(), mimetype='text/plain')
     
-app.run()
+app.run('0.0.0.0')
 
 # import asyncio
 
