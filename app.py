@@ -40,7 +40,7 @@ safe_percentage = 99
 trailing_sl_and_tp = False
 
 # Makes sure to sell if purchase price is hit (Experimental)
-hold_the_floor = False
+hold_the_floor = True
 
 and_now_his_watch_has_ended = False
 
