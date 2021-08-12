@@ -77,6 +77,9 @@ def run():
     print('Hey Ho! Lest Go!')
     logging.info('Hey Ho! Lest Go!')
 
+    print(f'Started at: {datetime.now()}')
+    logging.info(f'Started at: {datetime.now()}')
+
 
     while True:
 
