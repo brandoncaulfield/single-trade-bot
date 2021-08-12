@@ -1,12 +1,15 @@
 {
-  "test_mode": false,
+  "test_mode": true,
   "time_difference": 3,
   "coin": "XETHZGBP",
-  "price_to_buy": 2000,
+  "price_to_buy": 0,
   "take_profit": 6,
   "stop_loss": 3,
   "value_to_spend": 2000,
   "trading_currency": "ZGBP",
   "safe_percentage": 99,
-  "trailing_sl_and_tp": false
+  "trailing_sl_and_tp": false,
+  "hold_the_floor": true,
+  "take_the_profit": false,
+  "stop_the_loss": false
 }

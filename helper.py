@@ -7,6 +7,18 @@ import logging
 import uuid
 
 
+
+def get_config():
+
+    try:
+        with open('config.json', 'r') as file:
+            return json.load(file)
+    except:
+        if not doesFileExists('./config.json'):
+            with open('config.json', 'w') as file:
+                json.dump({}, file)
+        raise Exception('There is no config file. We have created a blank one for you. Please check docs.')
+
 def is_coin_above_50_day_sma(coin, interval=1440):
     # ohlc_data = get_ohlc_data(coin, interval)
     # df = pd.DataFrame.from_dict(ohlc_data['result'])
