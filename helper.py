@@ -61,7 +61,7 @@ def get_previouse_price(coin):
             with open('previous_price.json', 'w') as file:
                 previous_price[coin] = float(current_price)
                 if len(previous_price) > 0:
-                    json.dump(previous_price, file)
+                    json.dump('previous_price', file)
                     return previous_price
                 # else:
                 #     previous_price = {}
@@ -77,13 +77,16 @@ def do_we_own_the_coin(coin):
         with open('portfolio.json', 'w') as file:
             json.dump({}, file)
 
-    with open('portfolio.json', 'r') as file:
-        portfolio = json.load(file)
-    if coin in portfolio:
-        return portfolio
-    else:
-        return False
-
+    try:
+        with open('portfolio.json', 'r') as file:
+            portfolio = json.load(file)
+        if coin in portfolio:
+            return portfolio
+        else:
+            return False
+    except:
+        print(f'Issue with opening the portfolio at "do_we_own_the_coin()')
+        logging.info(f'Issue with opening the portfolio at "do_we_own_the_coin()')
 
 def get_asset_balance(asset):
     
